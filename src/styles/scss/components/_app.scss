@@ -1,0 +1,14 @@
+.app {
+    position: absolute;
+    z-index: 200;
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    width: 1280px;
+
+    background: #eff3f9;
+    border-radius: 14px;
+}
+.mobile-menu {
+    display: none;
+}

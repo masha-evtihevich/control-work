@@ -1,0 +1,97 @@
+.nav {
+    position: absolute;
+
+    display: grid;
+    grid-template-columns: 80px;
+    grid-template-rows: 1fr 540px 1fr;
+    height: 907px;
+    @include background;
+    border-radius: 10px 0 0 10px;
+    &__link {
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:before {
+            content: '';
+        
+            position: absolute;
+            top: calc(50% - 25px);
+            left: 0;
+            
+            width: 4px;
+            height: 50px;
+            visibility: hidden;
+            opacity: 0;
+        
+            background-color: $color-blue;
+        
+            transition: all ease .5s;
+        }
+        &:hover:before {
+            visibility: visible;
+            opacity: 1;
+        
+            background-color: $color-blue;
+        }
+    }
+}
+.nav__link:only-child,
+.checkbox {
+    height: 80px;
+    width: 100%;
+}
+svg {
+    fill: #DFE6F1;
+    transition: fill ease .5s;
+}
+.nav__link:hover svg {
+    fill: $color-blue;
+} 
+// Toggle button
+.checkbox {
+    align-self: flex-end;
+
+    text-align: center;
+
+    &__toggle-button {
+        position: relative;
+
+        width: 60px;
+        height: 30px;
+
+    
+        border: 0.5px solid $color-text;
+        border-radius: 50px;
+        outline: none;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 4px;
+
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+
+            background-color: $color-blue;
+            border-radius: 50%;
+        
+            transform: translateX(0);
+        }
+        &:checked {
+            background-color: $color-blue;
+            &::after {
+                background-color: #E9E9E9;
+
+                transform: translateX(calc(100% + 10px)); 
+            }
+        } 
+    }
+}

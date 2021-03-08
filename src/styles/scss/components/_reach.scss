@@ -1,0 +1,31 @@
+.reach {
+    @include background;
+    @include grid;
+    grid-template-areas: 
+        'title ..'
+        'img text';
+    padding: $padding;
+    &__title {
+        @include font (700, 1.25rem);
+        
+        grid-area: title;
+    }
+    &__img {
+        grid-area: img;
+    }
+    &__text{
+        @include font (600, 0.75rem);
+        position: relative;
+
+        grid-area: text;
+        &--mobile {
+            margin-top: 20px;
+            &::before {
+                @include value ($color-blue);
+        } 
+    }
+        &--desktop::before {
+            @include value ($color-pink);
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.footer {
+    @include background;
+    @include grid;
+    
+    position: relative;
+
+    grid-template-columns: 107px 44px 25px;
+    align-items: end;
+    padding: $padding;
+
+    background-image: url(../../images/indicators/geo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 21rem;
+    &__title {
+        @include font (700, 1.25rem);
+        
+        grid-row: 1/1;
+    }
+    &__subtitle {
+        @include font (600, 0.75rem);
+
+        grid-row: 1/1;
+    }
+    &__text {
+        @include font (400, 0.75rem);
+
+        grid-row: 1/1;
+    }
+}

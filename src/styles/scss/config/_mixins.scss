@@ -1,0 +1,49 @@
+@mixin background {
+    background-color: #fdfdff;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+}
+@mixin font ($font-weights, $font-sizes) {
+    font-weight: $font-weights;
+    color: $color-text;
+    font-size: $font-sizes;
+}
+@mixin grid {
+    display: grid;
+    justify-content: space-between;
+    align-content: space-between;
+}
+// Header
+@mixin profile-arrow ($profile-right, $profile-transform) {
+    content: ''; 
+
+    position: absolute;
+    top: 1.5rem;
+    right: $profile-right;
+
+    width: 10px;
+    height: 3px;
+
+    background-color: #5b5b5b;
+
+    transform: $profile-transform;   
+}
+//Reach, gender
+@mixin value ($color-square) {
+    content: ''; 
+
+    position: absolute;
+    right: 72px;
+
+    width: 11px;
+    height: 11px;
+            
+    background-color: $color-square;
+    border-radius: 30%;
+}
+// Mobile
+@mixin backround-img {
+    background-size: contain;
+    background-position: bottom;
+}
+

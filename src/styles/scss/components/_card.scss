@@ -1,0 +1,73 @@
+.card {
+    @include background;
+    @include grid;
+    
+    padding: $padding;
+    &__title {
+        @include font (700, 1.25rem);
+
+        grid-column: 1/1;
+        grid-row: 1/1;
+    }
+    &__link {
+        content: ''; 
+
+        position: relative;
+        top: 8px;
+        left: 80px;
+
+        grid-column: 2/2;
+        grid-row: 1/2;
+        width: 5px;
+        height: 5px;
+
+        border-radius: 50%;
+        background-color: #979797;
+        &::before {
+            content: ''; 
+
+            position: absolute;
+            right: 12px;
+
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+            background-color: $color-content;
+        }
+        &::after {
+            content: ''; 
+
+            position: absolute;
+    
+            right: 24px;
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+            background-color: $color-content;
+        }
+    }
+    &__subtitle {
+        @include font (600, 1.25rem);
+
+        grid-column: 1/2;
+        grid-row: 2/2;
+    }
+    &__text-up,
+    &__text-down  {
+        @include font (600, 1.25rem);
+        
+        grid-column: 2/2;
+        grid-row: 2/2;
+        padding-right: 30px;
+
+        color: $color-content;
+    }
+    &__text-up {
+        background: url(../../images/vector/up.png) no-repeat 75px;
+    }
+    &__text-down {
+        background: url(../../images/vector/down.png) no-repeat 70px;
+    }
+}
